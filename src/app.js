@@ -1,10 +1,11 @@
 const express = require('express');
+const multer = require('multer');
 //const mongan = require('morgan');
 const routerProduct = require('./router/products.router');
 const app = express();
 const port = 3000; 
 const nombreDeLaEmpresa = 'MG lo quiero 3D';
-app.use(mongan("dev"));
+//app.use(mongan("dev"));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static(__dirname + '/src/public'));
