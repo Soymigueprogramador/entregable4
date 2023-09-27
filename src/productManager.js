@@ -1,4 +1,4 @@
-class ProductManager {
+/*class ProductManager {
     constructor() {
         this.products = [];
     }
@@ -15,4 +15,4 @@ class ProductManager {
         return this.products.find(product => product.id === pid);
     }
 }
-module.exports = ProductManager;
+module.exports = ProductManager;*/
