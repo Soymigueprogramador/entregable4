@@ -1,8 +1,10 @@
 const fs = require('fs');
 const express = require('express');
+
 class Container {
     constructor() {
     }
+
     saveProduct(product, file) {
         console.log('Guardando', product);
         let nextId = this.getNextId(file);
@@ -11,6 +13,7 @@ class Container {
         allProductArray.push(product);
         this.write(allProductArray, file);
     }
+
     updateProduct(id, product, file) {
         console.log("Actualizando", product);
         let allProductArray = this.read(file);
@@ -23,6 +26,7 @@ class Container {
             console.log('Producto no encontrado');
         }
     }
+
     getNextId(file) {
         let lastId = 0;
         let allProductArray = this.read(file);
@@ -31,6 +35,7 @@ class Container {
         }
         return lastId + 1;
     }
+
     read(file) {
         let allProductArray = [];
         try {
@@ -41,6 +46,7 @@ class Container {
         }
         return allProductArray;
     }
+
     write(allProductArray, file) {
         try {
             const json = JSON.stringify(allProductArray);
@@ -49,14 +55,17 @@ class Container {
             console.log('Error al escribir el archivo', error);
         }
     }
+
     getById(id, file) {
         let allProductArray = this.read(file);
         let product = allProductArray.find(p => p.id === id);
         return product ? product : null;
     }
+
     getAll(file) {
         return this.read(file);
     }
+
     deleteById(id, file) {
         let allProductArray = this.read(file);
         let index = allProductArray.findIndex(p => p.id === id);
@@ -68,6 +77,7 @@ class Container {
             console.log('Producto no encontrado');
         }
     }
+
     deleteAll(file) {
         let allProductArray = [];
         this.write(allProductArray, file);
