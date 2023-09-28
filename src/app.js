@@ -1,6 +1,4 @@
 const express = require('express');
-const multer = require('multer');
-//const mongan = require('morgan');
 const routerProduct = require('./router/products.router');
 const app = express();
 const port = 3000; 
@@ -21,6 +19,3 @@ try {
 catch(error) {
     console.log('`Error al arrancar la aplicacion ${error}');
 }
-app.listen('/', (req, res) => {
-    console.log('Hola a todos!! somos ${nombreDeLaEmpresa}');
-});
