@@ -4,8 +4,6 @@ const app = express();
 const port = 3000; 
 const nombreDeLaEmpresa = 'MG lo quiero 3D';
 
-//app.use(express.static(__dirname + './router/public/file'));
-
 app.use(express.urlencoded({extended: true}));
 
 app.use(express.json());
@@ -26,4 +24,4 @@ try {
 
 catch(error) {
     console.log('`Error al arrancar la aplicacion ${error}');
-}
+};

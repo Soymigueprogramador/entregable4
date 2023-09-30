@@ -17,7 +17,7 @@ class Container {
     updateProduct(id, product, file) {
         console.log("Actualizando", product);
         let allProductArray = this.read(file);
-        let index = allProductArray.findIndex(p => p.id === id);
+        let index = allProductArray.findIndex(product => product.id === id);
         if (index >= 0) {
             allProductArray[index] = product;
             this.write(allProductArray, file);
@@ -83,4 +83,5 @@ class Container {
         this.write(allProductArray, file);
     }
 }
+
 module.exports = Container;

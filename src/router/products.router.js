@@ -22,8 +22,7 @@ router.use(multer({ storage }).single('foto'));
 router.get('/:id', (req, res) => {
     const { id } = req.params;
     const product = containerProducts.getById(parseInt(id), archivo); 
-    product ? res.json({ product_id: id, producto: product })
-        : res.json({ mensaje: 'Producto no encontrado ' + id }); 
+    product ? res.json({ product_id: id, producto: product }) : res.json({ mensaje: 'Producto no encontrado ' + id }); 
 });
 
 router.post('/', (req, res) => {
