@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use(express.static(__dirname + '/public'));
 
-app.use('/api/product', routerProduct);
+app.use('/profile', routerProduct);
 
 function prendiendoApp() {
     console.log('prendiendoApp');

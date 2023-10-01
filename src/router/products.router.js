@@ -1,9 +1,10 @@
 const { Router } = require('express');
 const router = Router(); 
 const Container = require('../conteiner'); 
-const archivo = '../productos.txt';
+const archivo = './../productos.txt';
 const containerProducts = new Container(); 
 const multer = require('multer');
+
 
 const storage = multer.diskStorage({ 
     destination: function (req, file, cb) {
